@@ -6,6 +6,7 @@ import '../Controller/link_controller.dart';
 import '../Model/user.dart';
 import '../constants.dart';
 import '../styles.dart';
+
 class FollowerView extends StatefulWidget {
   static const id = '/FollowerView';
   const FollowerView({super.key});

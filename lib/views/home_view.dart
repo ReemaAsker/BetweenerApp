@@ -120,7 +120,7 @@ class _HomeViewState extends State<HomeView> {
                 padding: const EdgeInsets.only(
                     bottom: 48, left: 48, right: 48.0, top: 38),
                 child: Container(
-                    child: Image(
+                    child: const Image(
                   image: AssetImage('assets/imgs/qr_code_withcorners.png'),
                   color: kPrimaryColor,
                 )),
