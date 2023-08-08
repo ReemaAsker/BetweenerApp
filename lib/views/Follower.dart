@@ -2,20 +2,19 @@ import 'package:betweenerapp/views/friendView.dart';
 import 'package:flutter/material.dart';
 
 import '../Controller/follow_controller.dart';
-import '../Controller/link_controller.dart';
 import '../Model/user.dart';
 import '../constants.dart';
-import '../styles.dart';
 
 class FollowerView extends StatefulWidget {
   static const id = '/FollowerView';
   const FollowerView({super.key});
-
   @override
   State<FollowerView> createState() => _FollowerViewState();
 }
 
 class _FollowerViewState extends State<FollowerView> {
+  bool isFollow = false;
+
   @override
   void initState() {
     super.initState();
@@ -57,15 +56,25 @@ class _FollowerViewState extends State<FollowerView> {
                       Map<String, dynamic> followingItem = followingData[index];
                       return GestureDetector(
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => friendView(
-                                isFollow: true,
-                                user: UserClass.fromJson(followingItem),
+                          getAllFowolling(context).then((value) {
+                            List<UserClass> followingUsers = value
+                                .map((json) => UserClass.fromJson(json))
+                                .toList();
+
+                            int userIDToSearch = followingItem['id'];
+                            isFollow = followingUsers
+                                .any((element) => element.id == userIDToSearch);
+
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => FriendView(
+                                  isFollow: isFollow,
+                                  user: UserClass.fromJson(followingItem),
+                                ),
                               ),
-                            ),
-                          );
+                            );
+                          });
                         },
                         child: Padding(
                           padding: const EdgeInsets.all(16.0),
@@ -91,18 +100,6 @@ class _FollowerViewState extends State<FollowerView> {
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                               subtitle: Text('${followingItem['email']}'),
-                              trailing: Container(
-                                padding: EdgeInsets.all(8),
-                                decoration: BoxDecoration(
-                                  color: kPrimaryColor,
-                                  borderRadius: BorderRadius.circular(8),
-                                  border: Border.all(color: Colors.white),
-                                ),
-                                child: const Icon(
-                                  Icons.check,
-                                  color: Colors.white,
-                                ),
-                              ),
                             ),
                           ),
                         ),

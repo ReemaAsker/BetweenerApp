@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 
 import '../Controller/follow_controller.dart';
-import '../Controller/link_controller.dart';
 import '../Controller/search_controller.dart';
 import '../Model/user.dart';
 import '../constants.dart';
 import '../styles.dart';
-import 'friendView.dart';
 
 class SearchView extends StatefulWidget {
   static const id = '/SearchView';
@@ -115,16 +113,16 @@ class _SearchViewState extends State<SearchView> {
                     itemBuilder: (BuildContext context, int index) {
                       return GestureDetector(
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => friendView(
-                                isFollow:
-                                    isUserFollow(snapshot.data![index].id!),
-                                user: snapshot.data![index],
-                              ),
-                            ),
-                          );
+                          // Navigator.push(
+                          //   context,
+                          //   MaterialPageRoute(
+                          //     builder: (context) => FriendView(
+                          //       isFollow:
+                          //           isUserFollow(snapshot.data![index].id!),
+                          //       user: snapshot.data![index],
+                          //     ),
+                          //   ),
+                          // );
                         },
                         child: Padding(
                           padding: const EdgeInsets.all(16.0),

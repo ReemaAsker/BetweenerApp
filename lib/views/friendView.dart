@@ -1,24 +1,21 @@
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../Controller/follow_controller.dart';
-import '../Controller/user_controller.dart';
 import '../Model/user.dart';
 import '../constants.dart';
-import 'addingLink.dart';
 
-class friendView extends StatefulWidget {
+class FriendView extends StatefulWidget {
   static String id = '/friendView';
   final UserClass user;
   final bool isFollow;
-  const friendView({super.key, required this.user, required this.isFollow});
+  const FriendView({super.key, required this.user, required this.isFollow});
 
   @override
-  State<friendView> createState() => _FriendViewViewState();
+  State<FriendView> createState() => _FriendViewViewState();
 }
 
-class _FriendViewViewState extends State<friendView> {
+class _FriendViewViewState extends State<FriendView> {
   late UserClass friend;
 
   String capitalizeFirstLetter(String text) {
@@ -28,10 +25,33 @@ class _FriendViewViewState extends State<friendView> {
     return text[0].toUpperCase() + text.substring(1);
   }
 
+  void addFolloweeAndUpdateList(int userId) {
+    AddFollowee(context, {
+      'followee_id': '$userId',
+    }).then((value) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text('Added successfully!'),
+        backgroundColor: Colors.green,
+      ));
+      setState(() {
+        friend = widget.user;
+      });
+      Navigator.pop(context);
+      // After successfully adding the followee, update the followingdata list.
+    }).catchError((err) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text(err.toString()),
+        backgroundColor: Colors.red,
+      ));
+    });
+  }
+
   @override
   void initState() {
     super.initState();
-    friend = widget.user;
+    setState(() {
+      friend = widget.user;
+    });
   }
 
   @override
@@ -132,7 +152,11 @@ class _FriendViewViewState extends State<friendView> {
                               )), // Set the padding here
                             ),
                             onPressed: () {
-                              widget.isFollow ? null : print('ok');
+                              widget.isFollow
+                                  ? ''
+                                  : {
+                                      addFolloweeAndUpdateList(friend.id!),
+                                    };
                             },
                             child:
                                 Text(widget.isFollow ? 'Followed' : 'Follow'))

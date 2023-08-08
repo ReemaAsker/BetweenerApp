@@ -121,13 +121,14 @@ class _ProfileViewState extends State<ProfileView> {
                     updateLinksList();
                   });
                 });
+                setState(() {});
               },
               child: Container(
                 decoration:
                     BoxDecoration(borderRadius: BorderRadius.circular(100)),
                 padding: EdgeInsets.only(bottom: 100.0, right: 20.0),
                 child: CircleAvatar(
-                  backgroundColor: kPrimaryColor,
+                  backgroundColor: kPrimaryColor.withOpacity(0.8),
                   child: Icon(Icons.add, size: 30, color: Colors.white),
                   radius: 30,
                 ),

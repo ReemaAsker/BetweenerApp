@@ -10,7 +10,6 @@ import 'package:betweenerapp/views/profile_view.dart';
 import 'package:betweenerapp/views/receive_view.dart';
 import 'package:betweenerapp/views/register_view.dart';
 import 'package:flutter/material.dart';
-
 import 'constants.dart';
 
 void main() async {

@@ -1,15 +1,12 @@
-
 import 'package:flutter/material.dart';
 
 import '../Controller/follow_controller.dart';
-import '../Controller/link_controller.dart';
 import '../Model/user.dart';
 import '../constants.dart';
-import '../styles.dart';
 import 'friendView.dart';
 
 class FollowingView extends StatefulWidget {
-  static const id = '/FollowerView';
+  static const id = '/FollowingView';
   const FollowingView({super.key});
 
   @override
@@ -61,7 +58,7 @@ class _FollowingViewState extends State<FollowingView> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => friendView(
+                              builder: (context) => FriendView(
                                 isFollow: true,
                                 user: UserClass.fromJson(followingItem),
                               ),
