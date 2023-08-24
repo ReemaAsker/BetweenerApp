@@ -1,16 +1,22 @@
 # betweenerapp
 
 A new Flutter project.
+<h1 align="center">Hi 👋, I'm Reema A. Asker</h1>
+<h3 align="center">Software Engineer</h3>
 
-## Getting Started
+<p align="left"> <img src="https://komarev.com/ghpvc/?username=reemaasker&label=Profile%20views&color=0e75b6&style=flat" alt="reemaasker" /> </p>
 
-This project is a starting point for a Flutter application.
+<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=reemaasker" alt="reemaasker" /></a> </p>
 
-A few resources to get you started if this is your first Flutter project:
+- 🔭 I’m currently working on [BetweenerApp](https://github.com/ReemaAsker/BetweenerApp)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+<h3 align="left">Connect with me:</h3>
+<p align="left">
+</p>
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<h3 align="left">Languages and Tools:</h3>
+<p align="left"> <a href="https://dart.dev" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/dartlang/dartlang-icon.svg" alt="dart" width="40" height="40"/> </a> <a href="https://www.figma.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="figma" width="40" height="40"/> </a> <a href="https://flutter.dev" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/flutterio/flutterio-icon.svg" alt="flutter" width="40" height="40"/> </a> <a href="https://www.java.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="40" height="40"/> </a> </p>
+
+<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=reemaasker&show_icons=true&locale=en&layout=compact" alt="reemaasker" /></p>
+
+<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=reemaasker&show_icons=true&locale=en" alt="reemaasker" /></p>
